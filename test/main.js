@@ -12,19 +12,19 @@ describe('Duration', () => {
 
             a.strictEqual(d.asMilliseconds(), 1000 * 60 * 60 * 24 * 365.25 / 2)
             a.strictEqual(d.asSeconds(), 60 * 60 * 24 * 365.25 / 2)
-            a.strictEqual(d.asMinute(), 60 * 24 * 365.25 / 2)
-            a.strictEqual(d.asHour(), 24 * 365.25 / 2)
-            a.strictEqual(d.asDay(), 365.25 / 2)
-            a.strictEqual(d.asWeek(), 365.25 / 7 / 2)
-            a.strictEqual(d.asYear(), .5)
+            a.strictEqual(d.asMinutes(), 60 * 24 * 365.25 / 2)
+            a.strictEqual(d.asHours(), 24 * 365.25 / 2)
+            a.strictEqual(d.asDays(), 365.25 / 2)
+            a.strictEqual(d.asWeeks(), 365.25 / 7 / 2)
+            a.strictEqual(d.asYears(), .5)
         })
 
         it('add / subtract', () => {
             const d = new Duration(1, 'day')
             d.add(4, 'hours')
-            a.strictEqual(d.asHour(), 28)
+            a.strictEqual(d.asHours(), 28)
             d.subtract(.5, 'day')
-            a.strictEqual(d.asHour(), 16)
+            a.strictEqual(d.asHours(), 16)
         })
 
         it('exact units', () => {

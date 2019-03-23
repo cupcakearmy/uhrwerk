@@ -42,12 +42,11 @@ export class Duration {
 	private duration: number
 
 	constructor(amount: number, interval: Intervals) {
-
 		this.duration = Duration.ProcessInterval(amount, interval)
 	}
 
 	private static ProcessInterval(amount: number, interval: Intervals): number {
-		switch (interval) {
+		switch (interval.toLowerCase()) {
 			case 'millisecond':
 			case 'milliseconds':
 				return amount * Millisecond
@@ -92,23 +91,23 @@ export class Duration {
 		return this.duration / Second
 	}
 
-	public asMinute(): number {
+	public asMinutes(): number {
 		return this.duration / Minute
 	}
 
-	public asHour(): number {
+	public asHours(): number {
 		return this.duration / Hour
 	}
 
-	public asDay(): number {
+	public asDays(): number {
 		return this.duration / Day
 	}
 
-	public asWeek(): number {
+	public asWeeks(): number {
 		return this.duration / Week
 	}
 
-	public asYear(): number {
+	public asYears(): number {
 		return this.duration / Year
 	}
 
