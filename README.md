@@ -107,3 +107,37 @@ Calculates the time duration as a time interval.
 const a = new Duration(1, 'day')
 a.asHours() // 24
 ```
+
+#### `.humanize()`
+
+This functions takes a duration and tries to make a human readable version out of it.
+
+###### Example
+
+```javascript
+const a = new Duration(4, 'seconds')
+a.humanize() // 'a moment'
+a.add(5, 'minutes')
+a.humanize() // 'a few minutes'
+```
+
+##### Own rules / i18n
+
+If you want to pass a different humanize function you can.
+
+###### Example
+
+```javascript
+const humanizer = [
+	[d => d.days() > 1, d => `${d.days()} days`],
+	[d => d.days() > 0, d => `1 day`],
+	[() => true, () => 'catch all, below 1 day'],
+]
+
+const a = new Duration(2, 'days')
+a.humanize(humanizer) // '2 days'
+a.subtract(1, 'day')
+a.humanize(humanizer) // '1 day'
+a.subtract(12, 'hours')
+a.humanize(humanizer) // 'catch all, below 1 day'
+```
