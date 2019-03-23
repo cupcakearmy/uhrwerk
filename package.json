@@ -1,0 +1,22 @@
+{
+  "private": true,
+  "name": "uhrwerk",
+  "version": "1.0.0",
+  "description": "time utility",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "npm run build && mocha",
+    "prepublish": "npm run test"
+  },
+  "keywords": [
+    "time"
+  ],
+  "author": "Niccolo Borgioli",
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "^6",
+    "typescript": "^3.3"
+  }
+}
