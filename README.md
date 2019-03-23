@@ -1,2 +1,107 @@
-# uhrwerk
+# uhrwerk 🕰
 Time utility
+
+**Typescript typings included**
+
+## Quickstart 🚀
+
+```typescript
+// Whatever import you prefer
+// const { Duration } = require('uhrwerk')
+import { Duration } from 'uhrwerk'
+
+const d = new Duration(10, 'days')
+d.subtract(1, 'week')
+d.add(5, 'minutes')
+
+d.humanize()    // '3 days'
+d.minutes()     // 5
+d.asMinute()    // 4325
+
+d.subtract(3, 'days')
+d.humanize()    // 'a few minutes'
+```
+
+### Reference 📒
+
+#### `new Duration(amount, interval)`
+
+- amount: number
+- interval: 'millisecond', 'second', 'minute', 'hour', 'day', 'week', 'year'
+Intervals can also be plural: e.g. 'days' is an alias for 'day'
+
+###### Examples
+
+```javascript
+const a = new Duration(1, 'day')
+const b = new Duration(2, 'days')
+const c = new Duration(0.5, 'year')
+```
+
+#### `.add(amount, interval)`
+
+Adds a specified amount to an existing duration
+
+###### Example
+
+```javascript
+const a = new Duration(1, 'day')
+a.add(12, 'hours')
+a.asHour() // 36
+```
+
+#### `.subtract(amount, interval)`
+
+Subtracts a specified amount to an existing duration
+
+###### Example
+
+```javascript
+const a = new Duration(1, 'day')
+a.subtract(12, 'hours')
+a.asHour() // 12
+```
+
+#### Getters
+
+Gets the amount of time interval, not the total time
+
+- `.milliseconds()`
+- `.seconds()`
+- `.minutes()`
+- `.hours()`
+- `.days()`
+- `.weeks()`
+- `.years()`
+
+###### Example
+
+```javascript
+const a = new Duration(1, 'day')
+a.days() // 1
+a.add(5, 'minutes')
+a.days() // 1
+a.add(1, 'year')
+a.days() // 1
+a.add(24, 'hours')
+a.days() // 2
+```
+
+#### As interval
+
+Calculates the time duration as a time interval.
+
+- `.asMilliseconds()`
+- `.asSeconds()`
+- `.asMinutes()`
+- `.asHours()`
+- `.asDays()`
+- `.asWeeks()`
+- `.asYears()`
+
+###### Example
+
+```javascript
+const a = new Duration(1, 'day')
+a.asHours() // 24
+```
