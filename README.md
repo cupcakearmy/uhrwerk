@@ -124,6 +124,7 @@ a.humanize() // 'a few minutes'
 ##### Own rules / i18n
 
 If you want to pass a different humanize function you can.
+The order of the array is important. The first match will return, like in a standard server router. The first argument is a function that takes the duration and returns a boolean. The second takes also matched duration and returns a string for the user.
 
 ###### Example
 
