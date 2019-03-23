@@ -1,5 +1,7 @@
 # uhrwerk 🕰
-Time utility
+Minimal time duration utility. Replacement for MomentJS Durations. If you are looking into the time component of MomentJS check out this awesome library [dayjs](https://github.com/iamkun/dayjs).
+
+📦 It's **tiny**: [1.6kB](https://bundlephobia.com/result?p=uhrwerk@1.0.0) vs moment js [231.7kb](https://bundlephobia.com/result?p=moment@latest)
 
 **Typescript typings included**
 
