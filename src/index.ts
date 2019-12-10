@@ -1,18 +1,25 @@
 type Intervals =
 	'millisecond'
 	| 'milliseconds'
+	| 'ms'
 	| 'second'
 	| 'seconds'
+	| 's'
 	| 'minute'
 	| 'minutes'
+	| 'm'
 	| 'hour'
 	| 'hours'
+	| 'h'
 	| 'day'
 	| 'days'
+	| 'd'
 	| 'week'
 	| 'weeks'
+	| 'w'
 	| 'year'
 	| 'years'
+	| 'y'
 
 const Millisecond = 1
 const Second = Millisecond * 1000
@@ -32,7 +39,7 @@ const defaultHumanizer: Humanizer = [
 	[d => d.days() > 0, d => `${d.days()} days`],
 	[d => d.hours() > 0, d => `${d.hours()} hours`],
 	[d => d.minutes() > 5, d => `${d.minutes()} minutes`],
-	[d => d.minutes() > 0, d => `a few minutes`],
+	[d => d.minutes() > 0, _ => `a few minutes`],
 	[() => true, () => `a moment`],
 ]
 
@@ -49,24 +56,31 @@ export class Duration {
 		switch (interval.toLowerCase()) {
 			case 'millisecond':
 			case 'milliseconds':
+			case 'ms':
 				return amount * Millisecond
 			case 'second':
 			case 'seconds':
+			case 's':
 				return amount * Second
 			case 'minute':
 			case 'minutes':
+			case 'm':
 				return amount * Minute
 			case 'hour':
 			case 'hours':
+			case 'h':
 				return amount * Hour
 			case 'day':
 			case 'days':
+			case 'd':
 				return amount * Day
 			case 'week':
 			case 'weeks':
+			case 'w':
 				return amount * Week
 			case 'year':
 			case 'years':
+			case 'y':
 				return amount * Year
 			default:
 				throw new Error('Wrong interval')
@@ -140,7 +154,7 @@ export class Duration {
 	}
 
 	public humanize(humanizer?: Humanizer): string {
-		if(!humanizer) humanizer = defaultHumanizer
+		if (!humanizer) humanizer = defaultHumanizer
 
 		for (const [control, value] of humanizer)
 			if (control(this))
