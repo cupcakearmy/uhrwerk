@@ -29,8 +29,14 @@ d.humanize()    // 'a few minutes'
 #### `new Duration(amount, interval)`
 
 - amount: number
-- interval: 'millisecond', 'second', 'minute', 'hour', 'day', 'week', 'year'
-Intervals can also be plural: e.g. 'days' is an alias for 'day'
+- interval:
+	- millisecond, milliseconds, ms
+	- second, seconds, s
+	- minute, minutes, m
+	- hour, hours, h
+	- day, days, d
+	- week, weeks, w
+	- year, years, y
 
 ###### Examples
 
