@@ -44,6 +44,7 @@ d.humanize()    // 'a few minutes'
 const a = new Duration(1, 'day')
 const b = new Duration(2, 'days')
 const c = new Duration(0.5, 'year')
+const d = new Duration (Date.now(), 'ms')
 ```
 
 #### `.add(amount, interval)`
