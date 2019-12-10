@@ -1,21 +1,24 @@
 {
   "name": "uhrwerk",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "time utility",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "test": "npm run build && mocha",
-    "prepublish": "npm run test"
+    "test": "yarn run build && mocha",
+    "prepublishOnly": "npm run test"
   },
   "keywords": [
-    "time"
+    "time",
+    "interval",
+    "humand-readable",
+    "utility"
   ],
   "author": "Niccolo Borgioli",
   "license": "MIT",
   "devDependencies": {
-    "mocha": "^6",
-    "typescript": "^3.3"
+    "mocha": "6.x",
+    "typescript": "3.x"
   }
 }
