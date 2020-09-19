@@ -1,6 +1,5 @@
 # uhrwerk 🕰
 
-![dependencies](https://badgen.net/david/dep/cupcakearmy/uhrwerk)
 ![types badge](https://badgen.net/npm/types/uhrwerk)
 ![version badge](https://badgen.net/npm/v/uhrwerk)
 ![minzip size badge](https://badgen.net/bundlephobia/minzip/uhrwerk)
