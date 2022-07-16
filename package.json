@@ -8,7 +8,7 @@
   "scripts": {
     "build": "tsup src/index.ts --format cjs,esm --dts --sourcemap",
     "test": "pnpm run build && mocha",
-    "prepublishOnly": "pnpm run test && pnpm run build"
+    "prepublishOnly": "pnpm run test"
   },
   "main": "./dist/index.cjs",
   "types": "./dist/index.d.ts",
