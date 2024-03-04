@@ -1,34 +1,31 @@
 # uhrwerk 🕰
 
-![dependencies](https://badgen.net/david/dep/cupcakearmy/uhrwerk)
-![downloads badge](https://badgen.net/npm/dt/uhrwerk)
-![types badge](https://badgen.net/npm/types/uhrwerk)
-![version badge](https://badgen.net/npm/v/uhrwerk)
-![minzip size badge](https://badgen.net/bundlephobia/minzip/uhrwerk)
+![package size](https://img.shields.io/bundlephobia/min/uhrwerk?style=flat)
+![downloads badge](https://img.shields.io/npm/dt/uhrwerk)
+![types badge](https://img.shields.io/npm/types/uhrwerk)
+![version badge](https://img.shields.io/npm/v/uhrwerk)
 
 Minimal time duration utility. Replacement for MomentJS Durations. If you are looking into the time component of MomentJS check out this awesome library [dayjs](https://github.com/iamkun/dayjs).
 
-📦 It's **tiny**: [1.6kB](https://bundlephobia.com/result?p=uhrwerk@1.0.0) vs moment js [231.7kb](https://bundlephobia.com/result?p=moment@latest)
+📦 It's **tiny**: [2kB](https://bundlephobia.com/package/uhrwerk@latest) vs moment js [295kB](https://bundlephobia.com/result?p=moment@latest)
 
-**Typescript typings included**
+🌈 No dependencies, types included.
 
 ## Quickstart 🚀
 
 ```typescript
-// Whatever import you prefer
-// const { Duration } = require('uhrwerk')
 import { Duration } from 'uhrwerk'
 
 const d = new Duration(10, 'days')
 d.subtract(1, 'week')
 d.add(5, 'minutes')
 
-d.humanize()    // '3 days'
-d.minutes()     // 5
-d.asMinute()    // 4325
+d.humanize() // '3 days'
+d.minutes() // 5
+d.asMinute() // 4325
 
 d.subtract(3, 'days')
-d.humanize()    // 'a few minutes'
+d.humanize() // 'a few minutes'
 ```
 
 ### Reference 📒
@@ -37,13 +34,13 @@ d.humanize()    // 'a few minutes'
 
 - amount: number
 - interval:
-	- millisecond, milliseconds, ms
-	- second, seconds, s
-	- minute, minutes, m
-	- hour, hours, h
-	- day, days, d
-	- week, weeks, w
-	- year, years, y
+  - millisecond, milliseconds, ms
+  - second, seconds, s
+  - minute, minutes, m
+  - hour, hours, h
+  - day, days, d
+  - week, weeks, w
+  - year, years, y
 
 ###### Examples
 
@@ -51,7 +48,7 @@ d.humanize()    // 'a few minutes'
 const a = new Duration(1, 'day')
 const b = new Duration(2, 'days')
 const c = new Duration(0.5, 'year')
-const d = new Duration (Date.now(), 'ms')
+const d = new Duration(Date.now(), 'ms')
 ```
 
 #### `.add(amount, interval)`
@@ -144,9 +141,9 @@ The order of the array is important. The first match will return, like in a stan
 
 ```javascript
 const humanizer = [
-	[d => d.days() > 1, d => `${d.days()} days`],
-	[d => d.days() > 0, d => `1 day`],
-	[() => true, () => 'catch all, below 1 day'],
+  [(d) => d.days() > 1, (d) => `${d.days()} days`],
+  [(d) => d.days() > 0, (d) => `1 day`],
+  [() => true, () => 'catch all, below 1 day'],
 ]
 
 const a = new Duration(2, 'days')
