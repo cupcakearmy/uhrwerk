@@ -2,16 +2,15 @@
   "name": "uhrwerk",
   "version": "1.1.1",
   "description": "time utility",
-  "author": "Niccolo Borgioli",
+  "keywords": [
+    "time",
+    "interval",
+    "human-readable",
+    "utility"
+  ],
   "license": "MIT",
+  "author": "Niccolo Borgioli",
   "type": "module",
-  "scripts": {
-    "build": "tsup src/index.ts --format cjs,esm --dts --sourcemap",
-    "test": "pnpm run build && mocha",
-    "prepublishOnly": "pnpm run test"
-  },
-  "main": "./dist/index.cjs",
-  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "require": "./dist/index.cjs",
@@ -19,19 +18,21 @@
       "types": "./dist/index.d.ts"
     }
   },
+  "main": "./dist/index.cjs",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
-  "keywords": [
-    "time",
-    "interval",
-    "human-readable",
-    "utility"
-  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts --sourcemap",
+    "prepublishOnly": "pnpm run test",
+    "test": "pnpm run build && mocha"
+  },
   "devDependencies": {
-    "@tsconfig/strictest": "^2.0.3",
-    "mocha": "^10.3.0",
-    "tsup": "^8.0.2",
-    "typescript": "^5.3.3"
-  }
+    "@tsconfig/strictest": "^2.0.5",
+    "mocha": "^10.7.0",
+    "tsup": "^8.2.3",
+    "typescript": "^5.5.4"
+  },
+  "packageManager": "pnpm@9.6.0"
 }
